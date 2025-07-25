@@ -1,0 +1,18 @@
+pending and success diff maps
+login for users and gov
+status page for user and gov
+user can update and delete complaint
+complaints near my area
+priority based on upvotes and downvotes (fake)
+image of problem
+email exists or not
+complaint form on left and map on right
+not working status update
+
+
+
+
+
+cd frontend
+cd backend
+.\venv\Scripts\activate

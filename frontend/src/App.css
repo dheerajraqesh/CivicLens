@@ -1,0 +1,66 @@
+
+.App {
+  text-align: center;
+  padding: 32px 0 0 0;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #f6faff 0%, #e3eafc 100%);
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  color: #1a237e;
+}
+
+h1 {
+  color: #1976d2;
+  font-size: 2.7rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+  letter-spacing: 1px;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 18px;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 420px;
+  margin: 0 auto 30px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 14px rgba(25, 118, 210, 0.06);
+  padding: 28px 28px 18px 28px;
+}
+input, select, button {
+  padding: 10px 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1.5px solid #e3eafc;
+  background: #f7fafd;
+  margin-bottom: 6px;
+  transition: border 0.2s, box-shadow 0.2s;
+}
+input:focus, select:focus {
+  border-color: #1976d2;
+  box-shadow: 0 0 0 2px #1976d233;
+}
+button {
+  background: linear-gradient(90deg, #1976d2 80%, #63a4ff 100%);
+  color: #fff;
+  border: none;
+  padding: 12px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: 700;
+  margin-top: 12px;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+button:hover, button:focus {
+  background: linear-gradient(90deg, #1565c0 80%, #42a5f5 100%);
+  box-shadow: 0 4px 18px rgba(25, 118, 210, 0.18);
+  outline: none;
+}
