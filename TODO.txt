@@ -7,8 +7,6 @@ priority based on upvotes and downvotes (fake)
 image of problem
 email exists or not
 complaint form on left and map on right
-not working status update
-
 
 
 

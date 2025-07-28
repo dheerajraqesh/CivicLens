@@ -5,19 +5,21 @@ import axios from 'axios';
 const ComplaintForm = ({ latitude, longitude, setLatitude, setLongitude }) => {
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
+  const [customCategory, setCustomCategory] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await axios.post('http://localhost:5000/api/complaints', {
         description,
-        category,
+        category: category === 'Other' ? customCategory : category,
         latitude: parseFloat(latitude),
         longitude: parseFloat(longitude),
       });
       alert('Complaint submitted!');
       setDescription('');
       setCategory('');
+      setCustomCategory('');
       setLatitude('');
       setLongitude('');
     } catch (error) {
@@ -45,7 +47,24 @@ const ComplaintForm = ({ latitude, longitude, setLatitude, setLongitude }) => {
           <option value="Road">Road</option>
           <option value="Garbage">Garbage</option>
           <option value="Electricity">Electricity</option>
+          <option value="Water">Water</option>
+          <option value="Street Light">Street Light</option>
+          <option value="Noise">Noise</option>
+          <option value="Pollution">Pollution</option>
+          <option value="Public Transport">Public Transport</option>
+          <option value="Parks">Parks</option>
+          <option value="Drainage">Drainage</option>
+          <option value="Other">Other</option>
         </select>
+        {category === 'Other' && (
+          <input
+            type="text"
+            value={customCategory}
+            onChange={(e) => setCustomCategory(e.target.value)}
+            placeholder="Enter custom type"
+            required
+          />
+        )}
       </div>
       <div>
         <label>Latitude:</label>

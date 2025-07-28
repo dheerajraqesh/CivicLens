@@ -3,15 +3,14 @@ import './Login.css';
 
 const Login = ({ onLogin, onSwitchToSignup }) => {
   const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-    if (!(username || email)) {
-      setError('Please enter username or email');
+    if (!username) {
+      setError('Please enter username');
       return;
     }
     if (!password) {
@@ -22,7 +21,7 @@ const Login = ({ onLogin, onSwitchToSignup }) => {
       const res = await fetch('http://localhost:5000/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, email, password })
+        body: JSON.stringify({ username, password })
       });
       const data = await res.json();
       if (!res.ok) {
@@ -43,10 +42,6 @@ const Login = ({ onLogin, onSwitchToSignup }) => {
         <div>
           <label>Username:</label>
           <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
-        </div>
-        <div>
-          <label>Email:</label>
-          <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
         </div>
         <div>
           <label>Password:</label>

@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 const complaintRoutes = require('./routes/complaints');
 const completedRoutes = require('./routes/completed');
 const authRoutes = require('./routes/auth');
-
+const usersRoutes = require('./routes/users');
 dotenv.config();
 
 const app = express();
@@ -21,6 +21,7 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 app.use('/api/complaints', complaintRoutes);
 app.use('/api/completed', completedRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/users', usersRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

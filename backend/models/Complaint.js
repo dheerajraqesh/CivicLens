@@ -8,6 +8,7 @@ const complaintSchema = new mongoose.Schema({
     coordinates: { type: [Number], required: true } // [longitude, latitude]
   },
   status: { type: String, default: 'Pending' },
+  assignedTo: { type: String, default: null }, // gov employee email or id
   createdAt: { type: Date, default: Date.now }
 });
 

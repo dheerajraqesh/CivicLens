@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const CompletedSchema = new mongoose.Schema({
+  by: { type: String, required: true }, // gov employee email/id
   description: String,
   category: String,
   location: {
