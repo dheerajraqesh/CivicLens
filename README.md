@@ -124,5 +124,3 @@ MIT
 ```
 
 ---
-
-For any issues, please open an issue or contact the maintainer.
